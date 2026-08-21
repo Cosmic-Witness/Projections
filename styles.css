@@ -137,9 +137,9 @@ h1 {
 .essay > p,
 .author-note p {
   width: min(var(--body-width), 100%);
-  margin: 0 auto 1.45rem;
-  font-size: 1.06rem;
-  line-height: 1.72;
+  margin: 0 auto 1.65rem;
+  font-size: clamp(1.18rem, 1.13rem + 0.24vw, 1.32rem);
+  line-height: 1.76;
   text-align: left;
 }
 
@@ -147,6 +147,19 @@ em,
 .note {
   color: #3d3d3d;
   font-style: italic;
+}
+
+var,
+.chatbot strong {
+  font-family: KaTeX_Math, "Cambria Math", "STIX Two Math", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.chatbot strong.term {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 600;
 }
 
 .chatbot {
@@ -158,9 +171,9 @@ em,
 }
 
 .chatbot p {
-  margin: 0 0 1.28rem;
-  font-size: 0.98rem;
-  line-height: 1.72;
+  margin: 0 0 1.48rem;
+  font-size: clamp(1.08rem, 1.04rem + 0.2vw, 1.2rem);
+  line-height: 1.76;
   text-align: left;
 }
 
@@ -169,131 +182,30 @@ em,
 }
 
 .equation {
-  margin: 2.1rem auto 2.35rem;
-  padding: 0.15rem 0.75rem;
+  margin: 2.45rem auto 2.7rem;
+  padding: 0.35rem 0.75rem;
   overflow-x: auto;
-  color: #282828;
-  font-size: 1.22rem;
-  line-height: 1.55;
+  color: #343434;
+  font-size: 1.32rem;
+  font-weight: 400;
+  line-height: 1.45;
   text-align: center;
-  white-space: nowrap;
   scrollbar-color: #c7c7c7 transparent;
 }
 
-.equation-pair {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(1.8rem, 5vw, 5rem);
+.equation .katex-display {
+  margin: 0;
 }
 
-.equation-stack {
-  width: min(var(--body-width), 100%);
-  display: grid;
-  gap: 0.12rem;
+.equation .katex {
+  font-size: 1.08em;
+  font-weight: 400;
 }
 
-.equation-long {
+.equation-wide {
   width: min(66rem, calc(100vw - 3rem));
   margin-left: 50%;
-  font-size: 1rem;
   transform: translateX(-50%);
-}
-
-.matrix {
-  position: relative;
-  min-width: 1.55em;
-  margin: 0 0.25em;
-  padding: 0.06em 0.52em;
-  display: inline-grid;
-  grid-template-columns: 1fr;
-  line-height: 1.08;
-  vertical-align: middle;
-}
-
-.matrix::before,
-.matrix::after {
-  position: absolute;
-  top: 50%;
-  font-size: 2.25em;
-  font-weight: 300;
-  line-height: 1;
-  transform: translateY(-52%);
-}
-
-.matrix::before {
-  left: 0;
-  content: "[";
-}
-
-.matrix::after {
-  right: 0;
-  content: "]";
-}
-
-.large-operator {
-  position: relative;
-  margin: 0 0.12em;
-  display: inline-block;
-  font-size: 1.65em;
-  line-height: 1;
-  vertical-align: middle;
-}
-
-.large-operator sub,
-.large-operator sup {
-  font-size: 0.42em;
-}
-
-.integral {
-  position: relative;
-  margin: 0 0.42em;
-  display: inline-block;
-  font-size: 2em;
-  line-height: 1;
-  vertical-align: middle;
-}
-
-.integral sup,
-.integral sub {
-  position: absolute;
-  left: 72%;
-  font-size: 0.34em;
-  line-height: 1;
-}
-
-.integral sup {
-  top: -0.18em;
-}
-
-.integral sub {
-  bottom: -0.14em;
-}
-
-.fraction {
-  margin: 0 0.14em;
-  display: inline-grid;
-  grid-template-rows: auto auto;
-  line-height: 1.05;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.fraction > span:first-child {
-  padding: 0 0.18em 0.05em;
-  border-bottom: 1px solid currentColor;
-}
-
-.fraction > span:last-child {
-  padding: 0.05em 0.18em 0;
-}
-
-.parenthetical::before {
-  content: "(";
-}
-
-.parenthetical::after {
-  content: ")";
 }
 
 .overline {
@@ -395,8 +307,8 @@ em,
 
   .essay > p,
   .author-note p {
-    font-size: 1rem;
-    line-height: 1.68;
+    font-size: 1.125rem;
+    line-height: 1.72;
   }
 
   .chatbot {
@@ -406,29 +318,17 @@ em,
   }
 
   .chatbot p {
-    font-size: 0.95rem;
+    font-size: 1.06rem;
   }
 
   .equation {
     margin-block: 1.75rem 2rem;
     padding-inline: 0.15rem;
-    font-size: 1rem;
+    font-size: 1.08rem;
   }
 
-  .equation-pair {
-    justify-content: flex-start;
-    gap: 1.5rem;
-  }
-
-  .dot-products {
-    display: grid;
-    justify-content: center;
-  }
-
-  .equation-long {
+  .equation-wide {
     width: calc(100vw - 2rem);
-    font-size: 0.76rem;
-    text-align: left;
   }
 
   .vector-figure {

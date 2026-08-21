@@ -9,7 +9,19 @@
     />
     <meta name="theme-color" content="#ffffff" />
     <title>Projections — Kasozi Ismail</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.18.1/dist/katex-swap.min.css"
+      integrity="sha384-K1TI7Ktijrt7j4OXUE01l7B+930e+/TANYDr7BOcY1nzek+4rm/Bew0vPAFebOVV"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/katex@0.18.1/dist/katex.min.js"
+      integrity="sha384-ycJ6GAwiS15LoUPipwJOrWTvkUHl/YqELValBwI5I4awP1EeEQJYarj+w85ntcz7"
+      crossorigin="anonymous"
+      defer
+    ></script>
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -75,10 +87,11 @@
             spaces that can be added together and scaled by numbers. An example of a vector would be
           </p>
 
-          <div class="equation" aria-label="v equals the column vector three, seven">
-            <strong>v</strong> =
-            <span class="matrix" aria-hidden="true"><span>3</span><span>7</span></span>.
-          </div>
+          <div
+            class="equation"
+            data-tex="v = \begin{bmatrix} 3 \\ 7 \end{bmatrix}."
+            aria-label="v equals the column vector three, seven"
+          ></div>
 
           <p>
             This vector is in ℝ<sup>2</sup>, in two-dimensional space. To visualise this vector, a
@@ -113,12 +126,11 @@
             is also
           </p>
 
-          <div class="equation" aria-label="v equals column vector three, zero plus column vector zero, seven">
-            <strong>v</strong> =
-            <span class="matrix" aria-hidden="true"><span>3</span><span>0</span></span>
-            +
-            <span class="matrix" aria-hidden="true"><span>0</span><span>7</span></span>.
-          </div>
+          <div
+            class="equation"
+            data-tex="v = \begin{bmatrix} 3 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ 7 \end{bmatrix}."
+            aria-label="v equals column vector three, zero plus column vector zero, seven"
+          ></div>
 
           <p>
             Multiplying a vector by a number would “scale it”, meaning that it would stretch,
@@ -133,16 +145,10 @@
             and the y-axis. These two fundamental vectors are called the basis vectors,
           </p>
 
-          <div class="equation equation-pair">
-            <span>
-              <strong>x̂</strong> =
-              <span class="matrix"><span>1</span><span>0</span></span>
-            </span>
-            <span>
-              <strong>ŷ</strong> =
-              <span class="matrix"><span>0</span><span>1</span></span>.
-            </span>
-          </div>
+          <div
+            class="equation"
+            data-tex="\hat{x} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \qquad \hat{y} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}."
+          ></div>
 
           <p>
             So our vector <strong>v</strong> is really just the result of scaling <strong>x̂</strong>
@@ -152,11 +158,7 @@
             ℝ<sup>n</sup>,
           </p>
 
-          <div class="equation">
-            <strong>v</strong> =
-            <span class="large-operator">∑<sub>i=1</sub><sup>n</sup></span>
-            <var>a</var><sub>i</sub><strong>ê</strong><sub>i</sub>,
-          </div>
+          <div class="equation" data-tex="v = \sum_{i=1}^{n} a_i \hat{e}_i,"></div>
 
           <p>a weighted sum of basis vectors.</p>
 
@@ -168,18 +170,10 @@
             basis vector, and with our <strong>ŷ</strong> basis vector.
           </p>
 
-          <div class="equation equation-pair dot-products">
-            <span>
-              <strong>v</strong> · <strong>x̂</strong> =
-              <span class="matrix"><span>3</span><span>7</span></span> ·
-              <span class="matrix"><span>1</span><span>0</span></span> = 3,
-            </span>
-            <span>
-              <strong>v</strong> · <strong>ŷ</strong> =
-              <span class="matrix"><span>3</span><span>7</span></span> ·
-              <span class="matrix"><span>0</span><span>1</span></span> = 7.
-            </span>
-          </div>
+          <div
+            class="equation"
+            data-tex="v \cdot \hat{x} = \begin{bmatrix} 3 \\ 7 \end{bmatrix} \cdot \begin{bmatrix} 1 \\ 0 \end{bmatrix} = 3, \qquad v \cdot \hat{y} = \begin{bmatrix} 3 \\ 7 \end{bmatrix} \cdot \begin{bmatrix} 0 \\ 1 \end{bmatrix} = 7."
+          ></div>
 
           <p>
             The result of <strong>v</strong> · <strong>x̂</strong> will give us a measure of how much of
@@ -217,11 +211,7 @@
             more commonly called the dot product. This is defined as
           </p>
 
-          <div class="equation">
-            <strong>a</strong> · <strong>b</strong> =
-            <span class="large-operator">∑<sub>k=1</sub><sup>n</sup></span>
-            <var>a</var><sub>k</sub><var>b</var><sub>k</sub>.
-          </div>
+          <div class="equation" data-tex="a \cdot b = \sum_{k=1}^{n} a_k b_k."></div>
 
           <p>
             It isn’t that hard to see how the dot product introduces geometry into a vector space,
@@ -246,7 +236,7 @@
             orthogonal if and only if
           </p>
 
-          <div class="equation">⟨<strong>a</strong>, <strong>b</strong>⟩ = 0.</div>
+          <div class="equation" data-tex="\langle a, b \rangle = 0."></div>
 
           <p>
             If they were not, then that value of 3 for the vector <strong>v</strong> along
@@ -326,12 +316,11 @@
           repeat this 16383 times, I’d have all my basis vectors!</em>
         </p>
 
-        <div class="equation equation-stack" aria-label="The standard basis vectors in 16384 dimensions">
-          <span><strong>ê</strong><sub>1</sub> = [1, 0, 0, …, 0]</span>
-          <span><strong>ê</strong><sub>2</sub> = [0, 1, 0, …, 0]</span>
-          <span>⋮</span>
-          <span><strong>ê</strong><sub>16384</sub> = [0, 0, 0, …, 1].</span>
-        </div>
+        <div
+          class="equation"
+          data-tex="\begin{aligned} \hat{e}_1 &amp;= [1, 0, 0, \ldots, 0] \\ \hat{e}_2 &amp;= [0, 1, 0, \ldots, 0] \\ &amp;\vdots \\ \hat{e}_{16384} &amp;= [0, 0, 0, \ldots, 1]. \end{aligned}"
+          aria-label="The standard basis vectors in 16384 dimensions"
+        ></div>
 
         <p><em>These are my probes. All I have to do now to get the strengths is to compute the inner products of the signal and each of them.</em></p>
 
@@ -398,7 +387,7 @@
             as a sum of two functions <var>f</var> and <var>g</var> is defined pointwise as
           </p>
 
-          <div class="equation">(<var>f</var> + <var>g</var>)(<var>t</var>) = <var>f</var>(<var>t</var>) + <var>g</var>(<var>t</var>),</div>
+          <div class="equation" data-tex="(f + g)(t) = f(t) + g(t),"></div>
 
           <p>
             and scaling by a constant behaves identically. In this sense, functions are
@@ -420,7 +409,7 @@
 
           <p>The continuous version of discrete summation is integration. Therefore, the dot product becomes</p>
 
-          <div class="equation">⟨<var>f</var>, <var>g</var>⟩ = ∫ <var>f</var>(<var>t</var>)<var>g</var>(<var>t</var>) d<var>t</var>,</div>
+          <div class="equation" data-tex="\langle f, g \rangle = \int f(t)g(t)\,dt,"></div>
 
           <p>
             which is the inner product for vector spaces defined in infinite-dimensional space. The
@@ -438,11 +427,10 @@
             inner product of a function with itself,
           </p>
 
-          <div class="equation">
-            ⟨<var>f</var>, <var>f</var>⟩ =
-            <span class="integral"><sup>π</sup>∫<sub>&minus;π</sub></span>
-            <var>f</var>(<var>t</var>)<sup>2</sup> d<var>t</var>.
-          </div>
+          <div
+            class="equation"
+            data-tex="\langle f, f \rangle = \int_{-\pi}^{\pi} f(t)^2\,dt."
+          ></div>
 
           <p>
             Squaring the function before integrating in this way has some nice physical
@@ -454,16 +442,13 @@
             energy, those satisfying
           </p>
 
-          <div class="equation">
-            <span class="integral"><sup>π</sup>∫<sub>&minus;π</sub></span>
-            |<var>f</var>(<var>t</var>)|<sup>2</sup> d<var>t</var> &lt; ∞.
-          </div>
+          <div class="equation" data-tex="\int_{-\pi}^{\pi} |f(t)|^2\,dt &lt; \infty."></div>
 
           <p>
             This family of functions, over the interval [&minus;π, π], is called
             <var>L</var><sup>2</sup>([&minus;π, π]): the square-integrable functions on that interval.
             This infinite-dimensional space, with its notions of lengths and angles supplied by the
-            integral inner product function, is called a <strong>Hilbert space</strong>, after the
+            integral inner product function, is called a <strong class="term">Hilbert space</strong>, after the
             legendary mathematician David Hilbert. (Strictly speaking, the name also requires the
             space to be complete, meaning that limits of well-behaved sequences of functions do not
             escape the space.) It is into this space that we will project our signal. Of course, the
@@ -480,23 +465,20 @@
             concretely, consider
           </p>
 
-          <div class="equation">
-            ⟨cos(<var>nt</var>), cos(<var>mt</var>)⟩ =
-            <span class="integral"><sup>π</sup>∫<sub>&minus;π</sub></span>
-            cos(<var>nt</var>) cos(<var>mt</var>) d<var>t</var>,
-          </div>
+          <div
+            class="equation"
+            data-tex="\langle \cos(nt), \cos(mt) \rangle = \int_{-\pi}^{\pi} \cos(nt)\cos(mt)\,dt,"
+          ></div>
 
           <p>
             where we treat cos(<var>nt</var>) as the signal we’re trying to probe and
             cos(<var>mt</var>) as the basis vector probe. Using the expansion
           </p>
 
-          <div class="equation">
-            cos(<var>nt</var>) cos(<var>mt</var>) =
-            <span class="fraction"><span>1</span><span>2</span></span>
-            (cos((<var>n</var> &minus; <var>m</var>)<var>t</var>) +
-            cos((<var>n</var> + <var>m</var>)<var>t</var>)),
-          </div>
+          <div
+            class="equation"
+            data-tex="\cos(nt)\cos(mt) = \frac{1}{2}\bigl(\cos((n-m)t) + \cos((n+m)t)\bigr),"
+          ></div>
 
           <p>
             the integrand becomes a sum of cosine functions. If <var>n</var> ≠ <var>m</var>, each of
@@ -522,7 +504,10 @@
             are orthogonal), their inner products with a signal,
           </p>
 
-          <div class="equation">⟨<var>f</var>, sin(<var>nt</var>)⟩ &nbsp; and &nbsp; ⟨<var>f</var>, cos(<var>nt</var>)⟩,</div>
+          <div
+            class="equation"
+            data-tex="\langle f, \sin(nt) \rangle \quad \text{and} \quad \langle f, \cos(nt) \rangle,"
+          ></div>
 
           <p>
             would tell us a similar thing: that the frequency <var>n</var> is present in our signal.
@@ -534,16 +519,14 @@
             two, however. To do this, we can use the complex exponential,
           </p>
 
-          <div class="equation"><var>e</var><sup><var>int</var></sup> = cos(<var>nt</var>) + <var>i</var> sin(<var>nt</var>),</div>
+          <div class="equation" data-tex="e^{int} = \cos(nt) + i\sin(nt),"></div>
 
           <p>so that a single projection,</p>
 
-          <div class="equation">
-            <var>c</var><sub>n</sub> =
-            <span class="fraction"><span>1</span><span>2π</span></span>
-            <span class="integral"><sup>π</sup>∫<sub>&minus;π</sub></span>
-            <var>f</var>(<var>t</var>)<var>e</var><sup>&minus;<var>int</var></sup> d<var>t</var>,
-          </div>
+          <div
+            class="equation"
+            data-tex="c_n = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(t)e^{-int}\,dt,"
+          ></div>
 
           <p>
             performs both probings at once. The inner product of complex-valued functions
@@ -557,22 +540,10 @@
             sin(<var>nt</var>), the projection separates into:
           </p>
 
-          <div class="equation equation-long">
-            <var>c</var><sub>n</sub> =
-            <span class="fraction"><span>1</span><span>2</span></span>
-            <span class="parenthetical">
-              <span class="fraction"><span>1</span><span>π</span></span>
-              <span class="integral"><sup>π</sup>∫<sub>&minus;π</sub></span>
-              <var>f</var>(<var>t</var>) cos(<var>nt</var>) d<var>t</var>
-            </span>
-            &minus; <span class="fraction"><span><var>i</var></span><span>2</span></span>
-            <span class="parenthetical">
-              <span class="fraction"><span>1</span><span>π</span></span>
-              <span class="integral"><sup>π</sup>∫<sub>&minus;π</sub></span>
-              <var>f</var>(<var>t</var>) sin(<var>nt</var>) d<var>t</var>
-            </span>
-            = <span class="fraction"><span><var>a</var><sub>n</sub> &minus; <var>i</var><var>b</var><sub>n</sub></span><span>2</span></span>.
-          </div>
+          <div
+            class="equation equation-wide"
+            data-tex="\begin{aligned} c_n &amp;= \frac{1}{2}\left(\frac{1}{\pi}\int_{-\pi}^{\pi} f(t)\cos(nt)\,dt\right) - \frac{i}{2}\left(\frac{1}{\pi}\int_{-\pi}^{\pi} f(t)\sin(nt)\,dt\right) \\[0.6em] &amp;= \frac{a_n - ib_n}{2}. \end{aligned}"
+          ></div>
 
           <p>
             The real part carries the cosine projection <var>a</var><sub>n</sub> and the imaginary
@@ -582,11 +553,10 @@
             resulting vector in the complex plane,
           </p>
 
-          <div class="equation">
-            |<var>c</var><sub>n</sub>| =
-            <span class="fraction"><span>1</span><span>2</span></span>
-            √(<var>a</var><sub>n</sub><sup>2</sup> + <var>b</var><sub>n</sub><sup>2</sup>),
-          </div>
+          <div
+            class="equation"
+            data-tex="|c_n| = \frac{1}{2}\sqrt{a_n^2 + b_n^2},"
+          ></div>
 
           <p>
             combines both readings into half the overall amplitude of the signal at frequency
