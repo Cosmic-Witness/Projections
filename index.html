@@ -102,13 +102,30 @@
           </p>
 
           <figure class="vector-figure">
-            <canvas
-              id="vector-plot"
-              width="900"
-              height="560"
+            <div
+              class="vector-diagram"
               role="img"
               aria-label="A Cartesian plot showing the vector v equals three, seven and its projections onto the x and y axes"
-            ></canvas>
+            >
+              <div class="diagram-visual" aria-hidden="true">
+                <span class="diagram-axis axis-x"></span>
+                <span class="diagram-axis axis-y"></span>
+                <span class="diagram-guide guide-x"></span>
+                <span class="diagram-guide guide-y"></span>
+                <span class="diagram-tick tick-x"></span>
+                <span class="diagram-tick tick-y"></span>
+                <span class="diagram-origin"></span>
+                <span class="diagram-point"></span>
+                <span class="diagram-vector"></span>
+
+                <span class="plot-label label-origin" data-math="O"></span>
+                <span class="plot-label label-x" data-math="x"></span>
+                <span class="plot-label label-y" data-math="y"></span>
+                <span class="plot-label label-three" data-math="3"></span>
+                <span class="plot-label label-seven" data-math="7"></span>
+                <span class="plot-label label-vector" data-math="v = (3, 7)"></span>
+              </div>
+            </div>
             <figcaption>
               Figure 1: A vector in ℝ<sup>2</sup> represented via its coordinate projections onto
               the standard basis.
