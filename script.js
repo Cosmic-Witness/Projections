@@ -31,7 +31,7 @@ if (canvas) {
 
   function drawPlot() {
     const width = canvas.clientWidth;
-    const height = Math.round(width * 0.62);
+    const height = Math.round(width * 0.46);
     const scale = window.devicePixelRatio || 1;
 
     canvas.style.height = `${height}px`;
@@ -40,8 +40,9 @@ if (canvas) {
     context.setTransform(scale, 0, 0, scale, 0, 0);
     context.clearRect(0, 0, width, height);
 
-    const ink = "#ece9e2";
-    const guide = "#77756f";
+    const ink = "#344650";
+    const guide = "#a9bdc8";
+    const vector = "#f06a24";
     const originX = width * 0.2;
     const originY = height * 0.78;
     const pointX = width * 0.69;
@@ -62,15 +63,16 @@ if (canvas) {
     context.stroke();
     context.setLineDash([]);
 
-    drawArrow(originX, originY, pointX, pointY, ink, 2.5);
+    drawArrow(originX, originY, pointX, pointY, vector, 2.8);
 
     context.fillStyle = ink;
-    context.font = `${Math.max(18, width * 0.038)}px Georgia, serif`;
+    context.font = `${Math.max(17, width * 0.026)}px Georgia, serif`;
     context.fillText("O", originX - 26, originY + 30);
     context.fillText("3", pointX - 6, originY + 31);
     context.fillText("7", originX - 29, pointY + 7);
     context.fillText("x", width * 0.9, originY + 7);
     context.fillText("y", originX - 5, height * 0.06);
+    context.fillStyle = vector;
     context.fillText("v = (3, 7)", pointX + 18, pointY - 8);
   }
 
